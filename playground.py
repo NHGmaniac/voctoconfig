@@ -4,10 +4,14 @@ import signal
 import logging
 import sys
 import os
+
+gi.require_version('Gtk', '3.0')
+gi.require_version('Gst', '1.0')
+
 import lib.connection as Connection
 from lib.loghandler import LogHandler
 from lib.args import Args
-
+from gi.repository import Gtk, Gdk, Gst, GObject
 def testCallback(args):
     log = logging.getLogger("Test")
     log.info(str(args))
