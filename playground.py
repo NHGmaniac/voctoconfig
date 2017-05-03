@@ -8,11 +8,9 @@ import os
 gi.require_version('Gtk', '3.0')
 gi.require_version('Gst', '1.0')
 
-from gi.repository import Gtk, Gdk, Gst, GObject
+#from gi.repository import GObject
 
-GObject.threads_init()
-Gdk.init([])
-Gtk.init([])
+#GObject.threads_init()
 
 import lib.connection as Connection
 from lib.loghandler import LogHandler
