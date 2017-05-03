@@ -38,6 +38,8 @@ def main():
     Connection.establish(Args.host)
     Connection.enterNonblockingMode()
     Connection.on("message", testCallback)
+    mainloop = GObject.MainLoop()
+    mainloop.run()
     while True:
         logging.debug("mimimi...")
         Connection.send("message", "test2")
