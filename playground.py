@@ -40,6 +40,7 @@ def main():
     Connection.on("message", testCallback)
     while True:
         logging.debug("mimimi...")
+        Connection.send("message", "test2")
         time.sleep(10)
 
 
