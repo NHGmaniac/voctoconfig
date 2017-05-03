@@ -8,10 +8,16 @@ import os
 gi.require_version('Gtk', '3.0')
 gi.require_version('Gst', '1.0')
 
+from gi.repository import Gtk, Gdk, Gst, GObject
+
+GObject.threads_init()
+Gdk.init([])
+Gtk.init([])
+
 import lib.connection as Connection
 from lib.loghandler import LogHandler
 from lib.args import Args
-from gi.repository import Gtk, Gdk, Gst, GObject
+
 def testCallback(args):
     log = logging.getLogger("Test")
     log.info(str(args))
