@@ -20,6 +20,24 @@ def testCallback(args):
     log.info(str(args))
 
 
+class Voctoconfig(object):
+
+    def __init__(self):
+        self.log = logging.getLogger("Voctoconfig")
+        self.log.debug("Creating GObject Mainloop")
+        self.mainloop = GObject.MainLoop()
+
+    def run(self):
+        self.log.info("Running MainLoop")
+        try:
+            self.mainloop.run()
+        except KeyboardInterrupt:
+            self.log.info("Terminated via KeyboardInterrupt")
+
+    def quit(self):
+        self.log.info("Quitting MainLoop")
+        self.mainloop.quit()
+
 def main():
     docolor = (Args.color == 'always') or (Args.color == 'auto' and
                                            sys.stderr.isatty())
