@@ -10,9 +10,9 @@ import sys
 
 #GObject.threads_init()
 
-import lib.connection as Connection
-from lib.loghandler import LogHandler
 from lib.args import Args
+from lib.loghandler import LogHandler
+import lib.connection as Connection
 
 def testCallback(args):
     log = logging.getLogger("Test")
