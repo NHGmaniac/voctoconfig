@@ -37,7 +37,7 @@ def main():
     signal.signal(signal.SIGINT, signal.SIG_DFL)
     Connection.establish(Args.host)
     Connection.enterNonblockingMode()
-    Connection.on("test", testCallback)
+    Connection.on("message", testCallback)
     while True:
         logging.debug("mimimi...")
         time.sleep(10)
