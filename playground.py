@@ -9,6 +9,7 @@ import sys
 #from gi.repository import GObject
 
 #GObject.threads_init()
+import time
 
 from lib.args import Args
 from lib.loghandler import LogHandler
@@ -37,6 +38,9 @@ def main():
     Connection.establish(Args.host)
     Connection.enterNonblockingMode()
     Connection.on("test", testCallback)
+    while True:
+        logging.debug("mimimi...")
+        time.sleep(10)
 
 
 if __name__ == '__main__':
