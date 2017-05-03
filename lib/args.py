@@ -2,7 +2,7 @@ import argparse
 
 __all__ = ['Args']
 
-parser = argparse.ArgumentParser(description='Voctogui')
+parser = argparse.ArgumentParser(description='Voctoconfig')
 parser.add_argument('-v', '--verbose', action='count', default=0,
                     help="Also print INFO and DEBUG messages.")
 

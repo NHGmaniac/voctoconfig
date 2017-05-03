@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-import gi
+
 import signal
 import logging
 import sys
-import os
 
-gi.require_version('Gtk', '3.0')
-gi.require_version('Gst', '1.0')
+
 
 #from gi.repository import GObject
 
