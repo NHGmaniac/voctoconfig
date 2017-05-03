@@ -3,7 +3,7 @@ import socket
 import json
 import sys
 from queue import Queue
-from gi.repository import Gtk, GObject
+from gi.repository import GObject
 
 log = logging.getLogger('Connection')
 conn = None
@@ -69,7 +69,6 @@ def on_data(conn, _, leftovers, *args):
 
                     # FIXME try to reconnect
                     conn.close()
-                    Gtk.main_quit()
                     return False
 
             except UnicodeDecodeError as e:
@@ -89,6 +88,7 @@ def on_data(conn, _, leftovers, *args):
         GObject.idle_add(on_loop)
 
         command_queue.put((line, conn))
+        log.debug("Put {} into queue")
 
     if lines[-1] != '':
         log.debug("remaining %r", lines[-1])

@@ -6,9 +6,9 @@ import sys
 
 
 
-#from gi.repository import GObject
+from gi.repository import GObject
 
-#GObject.threads_init()
+GObject.threads_init()
 import time
 
 from lib.args import Args
